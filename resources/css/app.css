@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("../assets/fonts/Inter/static/Inter_28pt-Regular.ttf");
+}
+
+@font-face {
+    font-family: Inter-bold;
+    src: url("../assets/fonts/Inter/static/Inter_24pt-ExtraBold.ttf");
+}
+
+* {
+    font-family: Inter;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #222222;
+}
+
+.guestLayout {
+    background-color: #222222;
+}
+
+.nav-wrapper {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0.8px);
+    -webkit-backdrop-filter: blur(0.8px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.landingImage-wrapper img {
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 60%,
+        rgba(0, 0, 0, 0.8) 70%,
+        rgba(0, 0, 0, 0.4) 80%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 60%,
+        rgba(0, 0, 0, 0.8) 70%,
+        rgba(0, 0, 0, 0.4) 80%,
+        rgba(0, 0, 0, 0) 100%
+    );
+}
