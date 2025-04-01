@@ -2,6 +2,7 @@ import "./bootstrap";
 import { createRoot } from "react-dom/client";
 import { createInertiaApp } from "@inertiajs/react";
 import "../css/app.css";
+import { BrowserRouter } from "react-router-dom";
 
 createInertiaApp({
     resolve: (name) =>
@@ -11,6 +12,10 @@ createInertiaApp({
         ),
     setup({ el, App, props }) {
         const root = createRoot(el);
-        root.render(<App {...props} />);
+        root.render(
+            <BrowserRouter>
+                <App {...props} />
+            </BrowserRouter>
+        );
     },
 });

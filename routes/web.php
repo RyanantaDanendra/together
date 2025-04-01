@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordController;
+use App\Http\Controllers\ticketController;
 use Inertia\Inertia;
 
 Route::get('/', function () {
@@ -40,3 +41,6 @@ Route::get("/profile/edit", function() {
 
 // UPDATE PASSWORD
 Route::put("/profile/edit", [PasswordController::class, 'update'])->name('password.update');
+
+// BUY TICKET ROUTES
+Route::get("/buy_ticket", [ticketController::class, 'buyPage']);

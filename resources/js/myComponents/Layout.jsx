@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { router } from "@inertiajs/react";
 import "../../css/app.css";
 import Logo from "../../assets/logo.png";
 import { Link } from "@inertiajs/react";
 import { motion } from "framer-motion";
+import { usePage } from "@inertiajs/react";
+import { div } from "framer-motion/client";
 
 const Layout = ({ children }) => {
+    // varibale for storing the page path
+    const { url } = usePage();
+
     const [dropdown, setDropDown] = useState(false);
 
     const openDropDown = () => {
@@ -23,10 +28,14 @@ const Layout = ({ children }) => {
                     <img src={Logo} alt="" className="w-full object-cover" />
                 </div>
                 <div className="Linkd flex gap-4">
-                    <Link>Home</Link>
-                    <Link href="#About">About</Link>
-                    <Link href="#Gallery">Gallery</Link>
-                    <Link>Buy TIcket</Link>
+                    <Link href="/">Home</Link>
+                    {url == "/" && (
+                        <>
+                            <Link href="#About">About</Link>
+                            <Link href="#Gallery">Gallery</Link>
+                        </>
+                    )}
+                    <Link href="/buy_ticket">Buy TIcket</Link>
                     <div
                         onClick={openDropDown}
                         className="user-icon cursor-pointer"
