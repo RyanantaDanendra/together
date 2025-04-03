@@ -44,3 +44,4 @@ Route::put("/profile/edit", [PasswordController::class, 'update'])->name('passwo
 
 // BUY TICKET ROUTES
 Route::get("/buy_ticket", [ticketController::class, 'buyPage']);
+Route::post('/buy_ticket', [ticketController::class, 'order'])->name('order');

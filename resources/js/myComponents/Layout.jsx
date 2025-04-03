@@ -33,9 +33,9 @@ const Layout = ({ children }) => {
                         <>
                             <Link href="#About">About</Link>
                             <Link href="#Gallery">Gallery</Link>
+                            <Link href="/buy_ticket">Buy TIcket</Link>
                         </>
                     )}
-                    <Link href="/buy_ticket">Buy TIcket</Link>
                     <div
                         onClick={openDropDown}
                         className="user-icon cursor-pointer"
