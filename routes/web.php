@@ -7,10 +7,25 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\ticketController;
+use App\Models\Order;
+use App\Models\Reciept;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
-    return Inertia::render('Welcome');
+    $userId = auth()->user()->id;
+    $bought = Order::where('id_user',$userId)->exists();
+    $paid = Reciept::where('id_user', $userId)->exists();    
+
+    $orderAttendence = Order::where('id_user', $userId)->pluck("attendence");
+
+    return Inertia::render('Welcome', [
+        'success' => session('success'),
+        'notAttend' => session('notAttend'),
+        'bought' => $bought,
+        'paid' => $paid,
+        'orderAttendence' => $orderAttendence
+    ]);
 })->name('home')->middleware('auth');
 
 // login
@@ -45,3 +60,7 @@ Route::put("/profile/edit", [PasswordController::class, 'update'])->name('passwo
 // BUY TICKET ROUTES
 Route::get("/buy_ticket", [ticketController::class, 'buyPage']);
 Route::post('/buy_ticket', [ticketController::class, 'order'])->name('order');
+
+// Payment 
+Route::get('/payment', [ticketController::class, 'paymentPage'])->name('paymentPage');
+Route::post('/payment', [ticketController::class, 'upload'])->name('payment');

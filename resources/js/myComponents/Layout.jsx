@@ -7,7 +7,8 @@ import { motion } from "framer-motion";
 import { usePage } from "@inertiajs/react";
 import { div } from "framer-motion/client";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, bought, paid, orderAttendence }) => {
+    console.log(paid);
     // varibale for storing the page path
     const { url } = usePage();
 
@@ -21,6 +22,23 @@ const Layout = ({ children }) => {
         router.post(route("logout"));
     };
 
+    const showLinks = () => {
+        if (url == "/" || url == "/#About" || url == "/#Gallery") {
+            return (
+                <>
+                    <Link href="#About">About</Link>
+                    <Link href="#Gallery">Gallery</Link>
+                    {bought == false && (
+                        <Link href="/buy_ticket">Buy TIcket</Link>
+                    )}
+                    {paid == false && bought && orderAttendence == "yes" && (
+                        <Link href="/payment">Payment</Link>
+                    )}
+                </>
+            );
+        }
+    };
+
     return (
         <div className="Layout-container w-full h-screen">
             <div className="nav-wrapper w-full h-28 fixed top-0 flex justify-between items-center text-white px-6">
@@ -29,13 +47,7 @@ const Layout = ({ children }) => {
                 </div>
                 <div className="Linkd flex gap-4">
                     <Link href="/">Home</Link>
-                    {url == "/" && (
-                        <>
-                            <Link href="#About">About</Link>
-                            <Link href="#Gallery">Gallery</Link>
-                            <Link href="/buy_ticket">Buy TIcket</Link>
-                        </>
-                    )}
+                    {showLinks()}
                     <div
                         onClick={openDropDown}
                         className="user-icon cursor-pointer"

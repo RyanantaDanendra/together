@@ -49,4 +49,8 @@ class User extends Authenticatable
     public function order() {
         return $this->HasOne(Order::class);
     }
+
+    public function Reciept() {
+        return $this->HasOne(Reciept::class);
+    }
 }
