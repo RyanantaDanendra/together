@@ -16,6 +16,6 @@ class Order extends Model
     ];
 
     public function user() {
-        return $this->BelongsTo(User::class);
+        return $this->BelongsTo(User::class, 'id_user');
     }
 }

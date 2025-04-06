@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\ticketController;
+use App\Http\Controllers\dashboardController;
 use App\Models\Order;
 use App\Models\Reciept;
 use Inertia\Inertia;
@@ -40,9 +41,13 @@ Route::post("/register", [RegisteredUserController::class, 'store']);
 Route::post("/logout", [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 // DASHBOARD
-Route::get("/dashboard", function() {
-    return Inertia::render('Dashboard');
-})->name('dashboard');
+Route::get("/dashboard", [dashboardController::class, 'index'])->name('dashboard');
+
+// DASHBOOARD -> USERSS
+Route::get('/dashboard/users', [dashboardController::class, 'users'])->name('dashboard.users');
+
+// DASHBOARD -> ORDERS
+Route::get('/dashboard/orders', [dashboardController::class, 'orders'])->name('dashboard.orders');
 
 // DASHBOARD EDIT PROFILE
 Route::get("/dashboard/profile/edit", function() {
@@ -51,7 +56,9 @@ Route::get("/dashboard/profile/edit", function() {
 
 // USER EDIT PROFILE
 Route::get("/profile/edit", function() {
-    return Inertia::render('Profile/Edit');
+    return Inertia::render('Profile/Edit', [
+        'success' => session('success')
+    ]);
 })->name('profile.user.edit');
 
 // UPDATE PASSWORD
