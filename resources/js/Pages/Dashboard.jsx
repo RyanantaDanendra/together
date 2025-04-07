@@ -6,7 +6,7 @@ export default function Dashboard({ users, orders, payments }) {
     return (
         <AdminLayout>
             <Head title="Dashboard" />
-            <div className="Home-dashboard w-full text-white ps-6 pt-6 flex">
+            <div className="Home-dashboard w-full text-white ps-6 pt-6 flex flex-wrap ms-64">
                 <div className="total w-80 h-56 border-r-8 border-r-blue-500">
                     <div className="content h-full flex justify-center items-center gap-8">
                         <svg

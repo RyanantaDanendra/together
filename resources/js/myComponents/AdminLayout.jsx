@@ -4,7 +4,7 @@ const AdminLayout = ({ children }) => {
     return (
         <div className="AdminLayout-container w-full h-screen flex">
             <nav
-                className="h-full w-64 text-white flex justify-center flex-col gap-8 ps-4"
+                className="h-full w-64 fixed text-white flex justify-center flex-col gap-8 ps-4"
                 style={{ backgroundColor: "#7F00FF80" }}
             >
                 <div className="link flex gap-2">

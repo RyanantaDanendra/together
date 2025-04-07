@@ -37,4 +37,17 @@ class dashboardController extends Controller
             'orders' => $orders,
         ]);
     }
+
+    // update attendence funciton
+    public function update(Request $request, $id) {
+        $validatedData = $request->validate([
+            'attendence' => 'required'
+        ]);
+
+        $order = Order::find($id);
+
+        $order->update($validatedData);
+
+        $order->save();
+    }
 }

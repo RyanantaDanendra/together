@@ -48,6 +48,7 @@ Route::get('/dashboard/users', [dashboardController::class, 'users'])->name('das
 
 // DASHBOARD -> ORDERS
 Route::get('/dashboard/orders', [dashboardController::class, 'orders'])->name('dashboard.orders');
+Route::put('/dashboard/update/{id}', [dashboardController::class, 'update']);
 
 // DASHBOARD EDIT PROFILE
 Route::get("/dashboard/profile/edit", function() {

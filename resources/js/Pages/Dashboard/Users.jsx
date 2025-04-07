@@ -9,7 +9,7 @@ const Users = ({ users }) => {
                     key={index}
                     style={{ borderBottom: ".5px solid #FFFFFF60" }}
                 >
-                    <td className="pe-10 text-xl">{user.id}</td>
+                    <td className="pe-10 p-4 text-xl">{user.id}</td>
                     <td className="pe-10 text-xl">{user.name}</td>
                     <td className="text-xl">{user.email}</td>
                 </tr>
@@ -19,8 +19,8 @@ const Users = ({ users }) => {
 
     return (
         <AdminLayout>
-            <div className="usersDashboard-container w-full flex justify-center  ps-5 pt-5 text-white mt-40">
-                <div>
+            <div className="usersDashboard-container w-full flex justify-center text-white mt-40">
+                <div className="ms-72">
                     <table>
                         <thead>
                             <tr className="border-b-2 border-b-white">
