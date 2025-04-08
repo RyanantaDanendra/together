@@ -1,6 +1,11 @@
 import { Link } from "@inertiajs/react";
+import { router } from "@inertiajs/react";
 
 const AdminLayout = ({ children }) => {
+    const handleLogout = () => {
+        router.post(route("logout"));
+    };
+
     return (
         <div className="AdminLayout-container w-full h-screen flex">
             <nav
@@ -64,8 +69,11 @@ const AdminLayout = ({ children }) => {
                         />
                     </svg>
 
-                    <Link className="text-xl">Payment</Link>
+                    <Link className="text-xl" href={route("paymentsPage")}>
+                        Payment
+                    </Link>
                 </div>
+                <button onClick={handleLogout}>Logout</button>
             </nav>
 
             {children}

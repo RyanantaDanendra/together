@@ -3,15 +3,35 @@ import { useState } from "react";
 import { useForm } from "@inertiajs/react";
 import AdminLayout from "../../myComponents/AdminLayout";
 import Modal from "../../Components/Modal";
+import Swal from "sweetalert2";
 
-const Orders = ({ orders }) => {
+const Orders = ({ orders, success }) => {
+    if (success) {
+        Swal.fire({
+            title: "Success",
+            text: success,
+            icon: "success",
+        });
+    }
+
     const [selectedOrder, setSelectedOrder] = useState(null);
     const [attendenceRadio, setAttendenceRadio] = useState("");
+    const [activeModal, setActiveModal] = useState(null);
 
+    // variables for update function
     const { data, setData, put, processing, errors } = useForm({
         attendence: "",
     });
 
+    const {
+        data: allergyData,
+        setData: setAllergyData,
+        put: update,
+        processing: processing_allergy,
+        errors: errors_allergy,
+    } = useForm({
+        allergy: "",
+    });
     // const [open, setOpen] = useState(false);
 
     const handleOpen = (order) => {
@@ -21,6 +41,7 @@ const Orders = ({ orders }) => {
 
     const handleClose = () => {
         setSelectedOrder(null);
+        setActiveModal(null);
     };
 
     const handleUpdate = (e, id) => {
@@ -29,6 +50,38 @@ const Orders = ({ orders }) => {
         put(`/dashboard/update/${id}`);
 
         setSelectedOrder(null);
+    };
+
+    const handleAdd = (e, id) => {
+        e.preventDefault();
+
+        update(`/dashboard/add/${id}`);
+    };
+
+    const plusButton = (order) => {
+        const allergyEmpty =
+            order.allergy === null ||
+            order.allergy === undefined ||
+            order.allergy?.trim() === "";
+
+        if (order.attendence == "yes" && allergyEmpty) {
+            return (
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                    className="w-6 inline-block ms-2"
+                    onClick={() => [
+                        handleOpen(order),
+                        setActiveModal("addModal"),
+                    ]}
+                >
+                    <path
+                        fill="#ffffff"
+                        d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
+                    />
+                </svg>
+            );
+        }
     };
 
     const displayOrder = () => {
@@ -43,7 +96,10 @@ const Orders = ({ orders }) => {
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 512 512"
                             className="w-6 mt-3"
-                            onClick={() => handleOpen(order)}
+                            onClick={() => [
+                                handleOpen(order),
+                                setActiveModal("updateModal"),
+                            ]}
                         >
                             <path
                                 fill="#ffffff"
@@ -51,7 +107,10 @@ const Orders = ({ orders }) => {
                             />
                         </svg>
                     </td>
-                    <td className="pe-10 text-xl">{order.allergy}</td>
+                    <td className="pe-10 text-xl">
+                        <p className="inline-block ms-3">{order.allergy}</p>
+                        {plusButton(order)}
+                    </td>
                 </tr>
             );
         });
@@ -68,7 +127,7 @@ const Orders = ({ orders }) => {
                                 <th className="pe-10 text-2xl font-bold">
                                     Name
                                 </th>
-                                <th className="pe-10 text-2xl font-bold">
+                                <th className="pe-14 text-2xl font-bold">
                                     Attendence
                                 </th>
                                 <th className="pe-10 text-2xl font-bold">
@@ -79,7 +138,13 @@ const Orders = ({ orders }) => {
                         <tbody>
                             {displayOrder()}
                             {/* attenedence modal */}
-                            <Modal show={!!selectedOrder} onClose={handleClose}>
+                            <Modal
+                                show={
+                                    !!selectedOrder &&
+                                    activeModal == "updateModal"
+                                }
+                                onClose={handleClose}
+                            >
                                 <h1 className="text-center">
                                     Update Attendence
                                 </h1>
@@ -136,6 +201,41 @@ const Orders = ({ orders }) => {
                                         <button type="submit">Update</button>
                                     </div>
                                 </form>
+                            </Modal>
+
+                            {/* allergy add modal */}
+                            <Modal
+                                show={
+                                    !!selectedOrder && activeModal == "addModal"
+                                }
+                                onClose={handleClose}
+                            >
+                                <h1 className="text-center">Add Allergy</h1>
+                                <div className="form-content flex justify-center mt-4 pb-3">
+                                    <form
+                                        onSubmit={(e) =>
+                                            handleAdd(e, selectedOrder?.id)
+                                        }
+                                    >
+                                        <input
+                                            type="text"
+                                            placeholder="Enter The Allergy. . ."
+                                            name="allergy"
+                                            id="allergy"
+                                            value={allergyData?.allergy}
+                                            onChange={(e) =>
+                                                setAllergyData(
+                                                    "allergy",
+                                                    e.target.value
+                                                )
+                                            }
+                                            className="block border-b-2 border-b-black"
+                                        />
+                                        <button type="Submit" className="mt-2">
+                                            Submit
+                                        </button>
+                                    </form>
+                                </div>
                             </Modal>
                         </tbody>
                     </table>

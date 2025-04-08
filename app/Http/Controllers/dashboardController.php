@@ -49,5 +49,30 @@ class dashboardController extends Controller
         $order->update($validatedData);
 
         $order->save();
+
+        return back()->with("success", "Attendence Updated Successfully");
+    }
+
+    // add allergy
+    public function add($id, Request $request) {
+        $validatedData = $request->validate([
+            'allergy' => 'string|max:50'
+        ]);
+
+        $order = Order::find($id);
+
+        $order->update($validatedData);
+
+        $order->save();
+
+        return back()->with("success", "Attendence Updated Successfully");
+    }
+
+    public function paymentsPage() {
+         $payments = Reciept::orderBy('id')->with('user:id,name')->get();
+
+        return Inertia::render('Dashboard/Payments', [
+            'payments' => $payments,
+        ]);
     }
 }
