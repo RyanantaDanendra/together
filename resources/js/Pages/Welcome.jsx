@@ -35,23 +35,23 @@ export default function Welcome({
 
     return (
         <Layout bought={bought} paid={paid} orderAttendence={orderAttendence}>
-            <div className="landing-container w-full h-80 text-white pt-40">
-                <h1 className="text-center font-extrabold text-5xl tracking-[1rem]">
+            <div className="landing-container w-full pt-56 h-80 text-white lg:pt-40">
+                <h1 className="text-center font-extrabold text-2xl lg:text-5xl tracking-[1rem]">
                     TOGETHER
                 </h1>
-                <h2 className="text-center mt-3">
+                <h2 className="text-center mt-3 text-sm">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.{" "}
                 </h2>
-                <h2 className="text-center mt-2">
+                <h2 className="text-center mt-2 text-sm">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Fugiat, saepe?
                 </h2>
-                <div className="landing-image flex justify-center m-60">
-                    <div className="landingImage-wrapper w-72">
+                <div className="landing-image flex justify-center mt-56 p-0 w-full">
+                    <div className="landingImage-wrapper w-56lg:w-72">
                         <img
                             src={Logo}
-                            alt="KLogo"
-                            className="w-full object-cover"
+                            alt="Logo"
+                            className="w-full h-full object-cover"
                         />
                     </div>
                 </div>

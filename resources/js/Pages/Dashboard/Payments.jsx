@@ -7,8 +7,8 @@ const Payments = ({ payments }) => {
             <tr className="h-56">
                 <td>{payment.id}</td>
                 <td>{payment.user?.name}</td>
-                <td>
-                    <div className="image-wrapper w-32 h-32">
+                <td className="flex justify-center items-center">
+                    <div className="image-wrapper w-32 h-32 mt-10">
                         <img
                             src={`../storage/${payment?.image}`}
                             alt={payment.image}
@@ -26,12 +26,12 @@ const Payments = ({ payments }) => {
                 <div className="ms-72">
                     <table>
                         <thead>
-                            <tr>
+                            <tr className="border-b-2 border-b-white">
                                 <th className="pe-10 text-2xl font-bold">Id</th>
                                 <th className="pe-10 text-2xl font-bold">
                                     Name
                                 </th>
-                                <th className="pe-10 text-2xl font-bold">
+                                <th className="text-2xl px-10 font-bold">
                                     Reciept
                                 </th>
                             </tr>

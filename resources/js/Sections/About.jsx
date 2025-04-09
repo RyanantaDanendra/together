@@ -5,11 +5,11 @@ const About = () => {
     return (
         <div
             id="About"
-            className="About-container w-full h-screen text-white ps-32 pt-10 flex "
+            className="About-container w-full h-screen gap-10 pb-20 text-white  pt-10 flex flex-col items-center md:gap-14 md:ps-0 md:flex-col md:items-center md:pt-3 sm:flex-col sm:items-center lg:flex-row lg:ps-32"
         >
-            <div className="about-text w-2/4 pt-24">
+            <div className="about-text w-2/4 pt-28">
                 <h1 className="text-5xl font-bold">HEY THERE!</h1>
-                <p className="text-xl text-justify mt-5">
+                <p className="text-xl text-left lg:text-justify mt-5">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     Nemo ipsa ducimus libero nihil nesciunt? Ullam ipsa,
                     veritatis, assumenda sequi accusamus perspiciatis rerum,
@@ -19,14 +19,11 @@ const About = () => {
                 </p>
             </div>
             <div className="about-image w-2/4 flex justify-center">
-                <div
-                    className="aboutImage-wrapper w-96"
-                    style={{ height: "30rem" }}
-                >
+                <div className="aboutImage-wrapper w-96">
                     <img
                         src={Image}
                         alt="Gathering"
-                        className="w-full h-full object-cover"
+                        className="w-full  object-cover"
                     />
                 </div>
             </div>

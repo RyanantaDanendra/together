@@ -48,9 +48,15 @@ class dashboardController extends Controller
 
         $order->update($validatedData);
 
+        if($request->attendence == "no") {
+            $order->update([
+                'allergy' => '-'
+            ]);
+        }
+
         $order->save();
 
-        return back()->with("success", "Attendence Updated Successfully");
+        return back()->with("updateSuccess", "Attendence Updated Successfully");
     }
 
     // add allergy

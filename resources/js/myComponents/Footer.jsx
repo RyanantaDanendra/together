@@ -2,7 +2,7 @@ const Footer = () => {
     return (
         <div
             className="Footer-container w-full h-96 ps-20 pt-20 flex"
-            style={{ marginTop: "40rem" }}
+            // style={{ marginTop: "40rem" }}
         >
             <div className="title w-2/4">
                 <h1 className="text-6xl tracking-[1rem] font-extrabold mt-56">

@@ -5,11 +5,18 @@ import AdminLayout from "../../myComponents/AdminLayout";
 import Modal from "../../Components/Modal";
 import Swal from "sweetalert2";
 
-const Orders = ({ orders, success }) => {
+const Orders = ({ orders, success, updateSuccess }) => {
     if (success) {
         Swal.fire({
             title: "Success",
             text: success,
+            icon: "success",
+        });
+    }
+    if (updateSuccess) {
+        Swal.fire({
+            title: "Success",
+            text: updateSuccess,
             icon: "success",
         });
     }

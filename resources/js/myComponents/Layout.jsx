@@ -8,7 +8,6 @@ import { usePage } from "@inertiajs/react";
 import { div } from "framer-motion/client";
 
 const Layout = ({ children, bought, paid, orderAttendence }) => {
-    console.log(paid);
     // varibale for storing the page path
     const { url } = usePage();
 
