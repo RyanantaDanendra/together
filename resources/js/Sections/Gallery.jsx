@@ -1,69 +1,17 @@
 import { useState, useEffect } from "react";
+import "../../css/app.css";
 import Left1 from "../../assets/about_image.jpg";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
 const Gallery = () => {
-    // const [offsetY, setOffsetY] = useState(0);
-
-    // useEffect(() => {
-    //     const handleScroll = () => {
-    //         setOffsetY(window.scrollY);
-    //     };
-
-    //     window.addEventListener("scroll", handleScroll);
-
-    //     return () => {
-    //         window.removeEventListener("scroll", handleScroll);
-    //     };
-    // }, []);
-
-    // const displayLeftImages = () => {
-    //     const leftImages = [Left1, Left1, Left1];
-
-    //     return leftImages.map((image, index) => {
-    //         return (
-    //             <div
-    //                 className="galleryLeftImage-wrapper w-64 h-64 mt-10"
-    //                 key={index}
-    //             >
-    //                 <img
-    //                     src={image}
-    //                     alt={image}
-    //                     className="w-full h-full object-cover"
-    //                 />
-    //             </div>
-    //         );
-    //     });
-    // };
-
-    // const displayRightImages = () => {
-    //     const images = [Left1, Left1, Left1];
-
-    //     return images.map((image, index) => {
-    //         return (
-    //             <div
-    //                 className="galleryLeftImage-wrapper w-64 h-64 mt-10"
-    //                 key={index}
-    //             >
-    //                 <img
-    //                     src={image}
-    //                     alt={image}
-    //                     className="w-full h-full object-cover"
-    //                 />
-    //             </div>
-    //         );
-    //     });
-    // };
-
     return (
         <div
             id="Gallery"
-            className="About-container w-full h-screen flex flex-col-reverse lg:ps-28"
-            style={{ marginTop: "40rem" }}
+            className="Gallery-container w-full min-h-screen md:min-h-0 mt-20 md:mt-40 flex flex-col-reverse xl:flex-row md:justify-start gap-6 xl:ps-28"
         >
-            <div className="gallery-images w-full lg:w-2/4 flex mt-24 lg:mt-32 px-10">
-                <div className="overflow-hidden ">
+            <div className="gallery-images w-full xl:w-2/4 flex lg:justify-center md:justify-center justify-center lg:mt-32 px-10">
+                <div className="overflow-hidden md:w-96 lg:w-96 w-96">
                     <Carousel
                         dynamicHeight={false}
                         autoPlay={true}
@@ -80,11 +28,11 @@ const Gallery = () => {
                     </Carousel>
                 </div>
             </div>
-            <div className="gallery-text w-full lg:w-2/4 lg:ps-12">
-                <h1 className="text-5xl font-bold mt-06 text-center">
+            <div className="gallery-text w-full xl:w-2/4 xl:mt-72">
+                <h1 className="text-5xl font-bold mt-06 text-center xl:text-left">
                     Gallery
                 </h1>
-                <p className="text-l mt-5 text-center">
+                <p className="text-l mt-5 text-center xl:text-left">
                     Take a look at our previous Gathering
                 </p>
             </div>

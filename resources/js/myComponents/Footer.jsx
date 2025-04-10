@@ -1,21 +1,17 @@
 const Footer = () => {
     return (
         <div
-            className="Footer-container w-full h-96 ps-20 pt-20 flex"
+            className="Footer-container w-full h-96 lg:ps-20 pt-20 flex gap-10 items-end pb-5"
             // style={{ marginTop: "40rem" }}
         >
             <div className="title w-2/4">
-                <h1 className="text-6xl tracking-[1rem] font-extrabold mt-56">
+                <h1 className="text-xl tracking-[8px] font-extrabold">
                     TOGETHER
                 </h1>
-                {/* <p className="mt-3">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p> */}
             </div>
-            <div className="socials w-2/4">
-                <h1 className="text-4xl">Socials</h1>
-                <div className="social-wrapper flex items-center mt-8 gap-3">
-                    <div className="social border-white border-2 w-12 h-12 rounded-full flex justify-center">
+            <div className="socials w-2/4 flex gap-2 justify-end">
+                <div className="social-wrapper flex items-center gap-3">
+                    <div className="social border-white border-2 w-10 h-10 rounded-full flex justify-center">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 448 512"
@@ -27,10 +23,9 @@ const Footer = () => {
                             />
                         </svg>
                     </div>
-                    <p>Lorem, ipsum.</p>
                 </div>
-                <div className="social-wrapper flex items-center mt-5 gap-3">
-                    <div className="social border-white border-2 w-12 h-12 rounded-full flex justify-center">
+                <div className="social-wrapper flex items-center gap-3">
+                    <div className="social border-white border-2 w-10 h-10 rounded-full flex justify-center">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 512 512"
@@ -42,10 +37,9 @@ const Footer = () => {
                             />
                         </svg>
                     </div>
-                    <p>Lorem, ipsum.</p>
                 </div>
-                <div className="social-wrapper flex items-center mt-5 gap-3">
-                    <div className="social border-white border-2 w-12 h-12 rounded-full flex justify-center">
+                <div className="social-wrapper flex items-center gap-3">
+                    <div className="social border-white border-2 w-10 h-10 rounded-full flex justify-center">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 384 512"
@@ -57,7 +51,6 @@ const Footer = () => {
                             />
                         </svg>
                     </div>
-                    <p>Lorem, ipsum.</p>
                 </div>
             </div>
         </div>
