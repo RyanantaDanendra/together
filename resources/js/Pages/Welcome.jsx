@@ -35,7 +35,10 @@ export default function Welcome({
 
     return (
         <Layout bought={bought} paid={paid} orderAttendence={orderAttendence}>
-            <div className="landing-container w-full pt-56 h-80 text-white lg:pt-40">
+            <div
+                id="Home"
+                className="landing-container w-full pt-56 h-80 text-white lg:pt-40"
+            >
                 <h1 className="text-center font-extrabold text-2xl lg:text-5xl tracking-[1rem]">
                     TOGETHER
                 </h1>

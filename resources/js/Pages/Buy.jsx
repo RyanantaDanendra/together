@@ -37,20 +37,18 @@ const Buy = ({ bought, orderAttendence }) => {
     return (
         <Layout bought={bought} orderAttendence={orderAttendence}>
             {bought == false ? (
-                <div className="Buy-container w-full h-screen flex justify-center items-center text-white">
+                <div className="Buy-container w-full h-screen flex justify-center items-center text-white lg:px-3">
                     <div
-                        className="form-wrapper px-24"
+                        className="form-wrapper min-w-96 xl:w-1/2 md:w-1/2 min-h-0 ps-6 xl:ps-12"
                         style={{
                             backgroundColor: "#7F00FF90",
-                            height: "30rem",
-                            width: "60vw",
                         }}
                     >
                         <form onSubmit={handleSubmit}>
-                            <h2 className="text-3xl text-center mt-7">RSVP</h2>
-                            <ul className="mt-10">
+                            <h2 className="text-xl text-center mt-7">RSVP</h2>
+                            <ul className="mt-10 w-full">
                                 <li>
-                                    <p className="text-xl pb-5">
+                                    <p className="text-l pb-5">
                                         Will you attend the gathering?
                                     </p>
                                     <label htmlFor="yes">Yes</label>
@@ -106,7 +104,7 @@ const Buy = ({ bought, orderAttendence }) => {
                                         <div>{errors.allergy}</div>
                                     )}
                                 </li>
-                                <li className="mt-16">
+                                <li className="mt-16 mb-7">
                                     <button
                                         type="submit"
                                         disabled={processing}

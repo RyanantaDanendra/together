@@ -25,6 +25,13 @@ const Gallery = () => {
                                 className="w-full h-full object-cover"
                             />
                         </div>
+                        <div style={{ width: "34rem", height: "26rem" }}>
+                            <img
+                                src={Left1}
+                                alt=""
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
                     </Carousel>
                 </div>
             </div>

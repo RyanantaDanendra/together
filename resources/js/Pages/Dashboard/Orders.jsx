@@ -63,6 +63,8 @@ const Orders = ({ orders, success, updateSuccess }) => {
         e.preventDefault();
 
         update(`/dashboard/add/${id}`);
+
+        setSelectedOrder(null);
     };
 
     const plusButton = (order) => {
