@@ -68,11 +68,48 @@ const Layout = ({ children, bought, paid, orderAttendence }) => {
                 <>
                     <Link href="#About">About</Link>
                     <Link href="#Gallery">Gallery</Link>
-                    {bought == false && (
-                        <Link href="/buy_ticket">Buy TIcket</Link>
+                    {!bought && (
+                        <Link href="/buy_ticket">
+                            <button
+                                className="px-4 py-2 rounded-md flex gap-2 "
+                                style={{ backgroundColor: "#7F00FF90" }}
+                            >
+                                <p className="text-white">Buy Ticket</p>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 448 512"
+                                    className="w-4"
+                                >
+                                    <path
+                                        fill="#ffffff"
+                                        d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
+                                    />
+                                </svg>
+                            </button>
+                        </Link>
                     )}
                     {paid == false && bought && orderAttendence == "yes" && (
-                        <Link href="/payment">Payment</Link>
+                        <Link href="/payment">
+                            <motion.button
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 0.5, delay: 0.8 }}
+                                className="px-5 py-3 rounded-md flex gap-2 "
+                                style={{ backgroundColor: "#7F00FF90" }}
+                            >
+                                <p className="text-white">Payment</p>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 448 512"
+                                    className="w-4"
+                                >
+                                    <path
+                                        fill="#ffffff"
+                                        d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
+                                    />
+                                </svg>
+                            </motion.button>
+                        </Link>
                     )}
                 </>
             );
@@ -86,7 +123,7 @@ const Layout = ({ children, bought, paid, orderAttendence }) => {
                     <img src={Logo} alt="" className="w-full object-cover" />
                 </div>
                 {screenSize ? (
-                    <div className="Linkd flex gap-4">
+                    <div className="Linkd flex items-center gap-4">
                         <Link
                             href={
                                 url == "/order" ||
@@ -212,7 +249,7 @@ const Layout = ({ children, bought, paid, orderAttendence }) => {
                                     </svg>
                                     {/* logout dropdown */}
                                     {dropdown && (
-                                        <motion.div
+                                        <div
                                             initial={{ height: 0, opacity: 0 }}
                                             animate={
                                                 dropdown
@@ -260,7 +297,7 @@ const Layout = ({ children, bought, paid, orderAttendence }) => {
                                                     Progile
                                                 </Link>
                                             </div>
-                                        </motion.div>
+                                        </div>
                                     )}
                                 </div>
                             </div>

@@ -8,10 +8,13 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\ticketController;
 use App\Http\Controllers\dashboardController;
+use App\Mail\MyTestEmail;
 use App\Models\Order;
 use App\Models\Reciept;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 Route::get('/', function () {
     $userId = auth()->user()->id;
@@ -27,7 +30,7 @@ Route::get('/', function () {
         'paid' => $paid,
         'orderAttendence' => $orderAttendence
     ]);
-})->name('home')->middleware('auth');
+})->name('home')->middleware(['auth', 'verified']);
 
 // login
 Route::get("/login", [AuthenticatedSessionController::class, 'create'])->name('login');
@@ -41,7 +44,7 @@ Route::post("/register", [RegisteredUserController::class, 'store']);
 Route::post("/logout", [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 // DASHBOARD
-Route::get("/dashboard", [dashboardController::class, 'index'])->name('dashboard');
+Route::get("/dashboard", [dashboardController::class, 'index'])->name('dashboard')->middleware(['auth', 'verified']);
 
 // DASHBOOARD -> USERSS
 Route::get('/dashboard/users', [dashboardController::class, 'users'])->name('dashboard.users');
@@ -76,3 +79,24 @@ Route::post('/buy_ticket', [ticketController::class, 'order'])->name('order');
 // Payment 
 Route::get('/payment', [ticketController::class, 'paymentPage'])->name('paymentPage');
 Route::post('/payment', [ticketController::class, 'upload'])->name('payment');
+
+// email verification
+Route::get('/email/verify', function() {
+    return Inertia::render('Auth/VerifyEmail');
+})->name('verification.notice');
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+
+    return back()->with('status', 'verification-link-sent');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    if(auth()->user()->as == "admin") {
+        return redirect('/dashboard');
+    } else {
+        return redirect('/');
+    }
+})->middleware(['auth', 'signed'])->name('verification.verify');
