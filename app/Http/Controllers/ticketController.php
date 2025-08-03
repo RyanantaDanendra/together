@@ -30,13 +30,11 @@ class ticketController extends Controller
 
         $validatedData = $request->validate([
             "attendence" => "required",
-            "allergy" => "nullable|string|max:50"
         ]);
 
         Order::create([
             'id_user' => $userId,
             'attendence' => $request->attendence,
-            'allergy' => $request->allergy,
         ]);
 
         if($request->attendence == "no") {

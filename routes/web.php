@@ -80,7 +80,7 @@ Route::post('/buy_ticket', [ticketController::class, 'order'])->name('order');
 Route::get('/payment', [ticketController::class, 'paymentPage'])->name('paymentPage');
 Route::post('/payment', [ticketController::class, 'upload'])->name('payment');
 
-// email verification
+// EMAIL VERIFICATION
 Route::get('/email/verify', function() {
     return Inertia::render('Auth/VerifyEmail');
 })->name('verification.notice');

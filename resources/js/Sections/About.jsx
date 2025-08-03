@@ -19,18 +19,24 @@ const About = () => {
                     className="text-5xl"
                     style={{ fontFamily: "Inter-Bold" }}
                 >
-                    HEY THERE!
+                    Get To Know Us
                 </motion.h1>
                 <motion.p
                     initial={{ opacity: 0, x: -100 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.4, delay: 0.4 }}
                     viewport={{ once: true, amount: 0.5 }}
-                    className="text-xl text-left mt-5"
+                    className="text-xl lg:mt-12 mt-5 text-justify"
                 >
-                    Together is a yearly event that is held by the international
-                    class students to set bonds between All of Us and the
-                    Freshman
+                    TOGETHER to celebrate their shared history and create
+                    lasting memories. The central idea is to foster a sense of
+                    togetherness, emphasizing the importance of family bonds.
+                    Shared activities, quality time, and cherished traditions,
+                    these gatherings strngthen family bonds. They emphasize
+                    inclusivity, building lasting memories, and reflecting on
+                    shared value. Ultimately, they celebrate the support, love,
+                    and unity that family provides, reminding everyone of their
+                    importance in each other's lives.
                 </motion.p>
             </div>
             <motion.div

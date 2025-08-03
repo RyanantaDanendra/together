@@ -11,6 +11,7 @@ const Users = ({ users }) => {
                 >
                     <td className="pe-10 p-4 text-xl">{user.id}</td>
                     <td className="pe-10 text-xl">{user.name}</td>
+                    <td className="pe-10 text-xl">{user.phone}</td>
                     <td className="text-xl">{user.email}</td>
                 </tr>
             );
@@ -29,6 +30,9 @@ const Users = ({ users }) => {
                                 </th>
                                 <th className="pe-10 text-2xl font-bold">
                                     Name{" "}
+                                </th>
+                                <th className="pe-10 text-2xl font-bold">
+                                    Phone{" "}
                                 </th>
                                 <th className=" text-2xl font-bold">Email </th>
                             </tr>

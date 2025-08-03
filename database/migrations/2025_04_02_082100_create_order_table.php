@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('id_user');
             $table->enum('attendence', ['yes', 'no'])->default('yes');
-            $table->String('allergy')->nullable();
+            // $table->String('allergy')->nullable();
             $table->timestamps();
         });
     }

@@ -11,7 +11,7 @@ const Gallery = () => {
             id="Gallery"
             className="Gallery-container w-full min-h-screen md:min-h-0 mt-20 md:mt-40 flex flex-col-reverse xl:flex-row md:justify-start gap-6 xl:ps-28 lg:flex-row"
         >
-            <div className="gallery-images w-full lg:w-2/4 flex lg:justify-center md:justify-center justify-center lg:mt-32 px-8 lg:px-0">
+            <div className="gallery-images w-full lg:w-2/4 flex lg:justify-end md:justify-center justify-center lg:mt-32 px-8 lg:px-0">
                 <motion.div
                     initial={{ opacity: 0, x: -100 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -35,7 +35,7 @@ const Gallery = () => {
                     </Carousel>
                 </motion.div>
             </div>
-            <div className="gallery-text w-full lg:flex lg:flex-col lg:justify-between lg:w-2/4 lg:mt-32 lg:ms-40 lg:h-[29rem]">
+            <div className="gallery-text w-full lg:flex lg:flex-col lg:justify-start lg:w-2/4 lg:mt-32 lg:ms-40 lg:h-[29rem]">
                 <motion.h1
                     initial={{ opacity: 0, x: 100 }}
                     whileInView={{ opacity: 1, x: 0 }}

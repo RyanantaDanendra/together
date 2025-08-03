@@ -9,6 +9,7 @@ import Swal from "sweetalert2";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Countdown from "../Sections/Countdown";
+import Location from "../Sections/Location";
 
 export default function Welcome({
     auth,
@@ -130,9 +131,10 @@ export default function Welcome({
                         />
                     </div>
                 </motion.div>
-                <Countdown />
                 <About />
+                <Countdown />
                 <Gallery />
+                <Location />
                 <Footer />
             </div>
         </Layout>

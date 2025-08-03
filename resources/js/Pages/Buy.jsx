@@ -10,7 +10,6 @@ const Buy = ({ bought, orderAttendence }) => {
     // declare the form variables
     const { data, setData, post, processing, errors } = useForm({
         attendence: "",
-        allergy: "",
     });
 
     const [select, setSelect] = useState(false);
@@ -87,32 +86,6 @@ const Buy = ({ bought, orderAttendence }) => {
                                                 )
                                             }
                                         />
-                                    </li>
-                                    <li className="mt-10">
-                                        <label
-                                            htmlFor="Allergy"
-                                            className="block"
-                                        >
-                                            Allergy:
-                                        </label>
-                                        <input
-                                            type="text"
-                                            name="allergy"
-                                            id="allergy"
-                                            value={data.allergy}
-                                            onChange={(e) =>
-                                                setData(
-                                                    "allergy",
-                                                    e.target.value
-                                                )
-                                            }
-                                            // required={true}
-                                            className="bg-transparent border-2 border-gray-400 rounded-lg mt-3 w-3/4"
-                                            disabled={select ? true : false}
-                                        />
-                                        {errors.allergy && (
-                                            <div>{errors.allergy}</div>
-                                        )}
                                     </li>
                                     <li className="mt-16 mb-7">
                                         <button
