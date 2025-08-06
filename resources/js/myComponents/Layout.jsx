@@ -192,7 +192,7 @@ const Layout = ({ children, bought, paid, orderAttendence }) => {
                                             href={route("profile.user.edit")}
                                             className="cursor-pointer ms-1"
                                         >
-                                            Progile
+                                            Profile
                                         </Link>
                                     </div>
                                 </motion.div>
@@ -294,7 +294,7 @@ const Layout = ({ children, bought, paid, orderAttendence }) => {
                                                     )}
                                                     className="cursor-pointer ms-1"
                                                 >
-                                                    Progile
+                                                    Profile
                                                 </Link>
                                             </div>
                                         </div>

@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\ticketController;
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\batch19ImagesController;
 use App\Mail\MyTestEmail;
 use App\Models\Order;
 use App\Models\Reciept;
@@ -100,3 +101,6 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
         return redirect('/');
     }
 })->middleware(['auth', 'signed'])->name('verification.verify');
+
+// BATCH 19 IMAGES PAGE
+Route::get('/batch19images', [batch19ImagesController::class, 'index'])->name('imagesPage');

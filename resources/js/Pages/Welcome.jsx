@@ -56,18 +56,11 @@ export default function Welcome({
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.4, delay: 0.4 }}
-                    className="landing-text text-center mt-3 text-sm"
+                    className="landing-text text-center mt-3 text-md"
                 >
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.{" "}
-                </motion.h2>
-                <motion.h2
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.4, delay: 0.6 }}
-                    className="landing-text text-center mt-2 text-sm font-extralight"
-                >
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fugiat, saepe?
+                    Toward an enriching gathering of hearts and relationship{" "}
+                    <br />
+                    Uniting difference through togetherness with family
                 </motion.h2>
                 <div className="w-full flex justify-center mt-5">
                     {!bought ? (
@@ -92,7 +85,7 @@ export default function Welcome({
                                 </svg>
                             </motion.button>
                         </Link>
-                    ) : (
+                    ) : paid == false && !bought ? (
                         <Link href="/payment">
                             <motion.button
                                 initial={{ opacity: 0 }}
@@ -114,7 +107,7 @@ export default function Welcome({
                                 </svg>
                             </motion.button>
                         </Link>
-                    )}
+                    ) : null}
                 </div>
                 <motion.div
                     initial={{ opacity: 0, y: 100 }}

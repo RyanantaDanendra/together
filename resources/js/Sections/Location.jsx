@@ -5,7 +5,7 @@ import "../../css/app.css";
 
 const Location = () => {
     // variable for event location
-    const position = [51.505, -0.09];
+    const position = [-8.655623318952083, 115.25404882709456];
 
     return (
         <div className="location-container mt-32">
@@ -40,11 +40,18 @@ const Location = () => {
                     </motion.div>
                 </div>
                 <div className="text w-1/2 ps-28">
-                    <h3 className="text-xl pb-12">
-                        Adress: <br /> Annonymous
+                    <h3 className="text-xl">
+                        Adress: <br />
                     </h3>
+                    <h1 className="text-2xl font-bold mt-2">
+                        Big Garden Corner
+                    </h1>
+                    <h2 className="pb-12 ">
+                        Sanur, Jl. Bypass Ngurah Rai, Kesiman, Denpasar Selatan,
+                        Kota Denpasar, Bali 80237
+                    </h2>
                     <motion.a
-                        href=""
+                        href="https://www.google.com/maps/place/Big+Garden+Corner/@-8.6563085,115.2406565,13.93z/data=!4m6!3m5!1s0x2dd24071d99200c3:0x6b8b5fe4aa9162c0!8m2!3d-8.6568602!4d115.253657!16s%2Fg%2F11c0pyr1_h?entry=ttu&g_ep=EgoyMDI1MDgwMy4wIKXMDSoASAFQAw%3D%3D"
                         initial={{ opacity: 0, y: -100 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 1 }}

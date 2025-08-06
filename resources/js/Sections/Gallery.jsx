@@ -35,26 +35,45 @@ const Gallery = () => {
                     </Carousel>
                 </motion.div>
             </div>
-            <div className="gallery-text w-full lg:flex lg:flex-col lg:justify-start lg:w-2/4 lg:mt-32 lg:ms-40 lg:h-[29rem]">
-                <motion.h1
-                    initial={{ opacity: 0, x: 100 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: 0.4 }}
-                    viewport={{ once: true, amount: 0.5 }}
-                    className="text-5xl font-bold text-center lg:text-left "
-                    style={{ fontFamily: "Inter-Bold" }}
-                >
-                    Gallery
-                </motion.h1>
-                <motion.p
-                    initial={{ opacity: 0, x: 100 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: 0.6 }}
-                    viewport={{ once: true, amount: 0.5 }}
-                    className="text-l mt-5 text-center lg:text-left text-xl"
-                >
-                    Take a look at our previous Gathering
-                </motion.p>
+            <div className="gallery-text w-full lg:flex lg:flex-col lg:justify-between lg:w-2/4 lg:mt-32 lg:ms-40 lg:h-[29rem]">
+                <div>
+                    <motion.h1
+                        initial={{ opacity: 0, x: 100 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4, delay: 0.4 }}
+                        viewport={{ once: true, amount: 0.5 }}
+                        className="text-5xl font-bold text-center lg:text-left "
+                        style={{ fontFamily: "Inter-Bold" }}
+                    >
+                        Gallery
+                    </motion.h1>
+                    <motion.p
+                        initial={{ opacity: 0, x: 100 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4, delay: 0.6 }}
+                        viewport={{ once: true, amount: 0.5 }}
+                        className="text-l mt-5 text-center lg:text-left text-xl"
+                    >
+                        Take a look at our previous Gathering
+                    </motion.p>
+                </div>
+                <a href="/batch19images">
+                    <div className="flex items-center gap-2 hover:underline">
+                        <p className="text-blue-500 hover:underline">
+                            Batch 19
+                        </p>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 640 640"
+                            className="w-4"
+                        >
+                            <path
+                                fill="#3b82f6"
+                                d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"
+                            />
+                        </svg>
+                    </div>
+                </a>
             </div>
         </div>
     );
