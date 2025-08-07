@@ -104,3 +104,9 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
 
 // BATCH 19 IMAGES PAGE
 Route::get('/batch19images', [batch19ImagesController::class, 'index'])->name('imagesPage');
+
+// BATCH 19 IMAGES DASHBOARD PAGE
+Route::get('/dashboard/batch19images', [batch19ImagesController::class, 'dashboardPage'])->name('dashboard.batch19images');
+
+// UPLOAD BATCH19IMAGE
+Route::post('/dashboard/batch19images', [batch19ImagesController::class, 'upload'])->name('upload.image');

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import Layout from "../myComponents/Layout";
-import Image from "../../assets/about_image.jpg";
+import Image from "../../../public/Gallery/foto11.jpg";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
 const About = () => {

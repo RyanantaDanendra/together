@@ -1,9 +1,23 @@
 import Layout from "../myComponents/Layout";
 
-const Images = () => {
+const Images = ({ images }) => {
+    const displayImage = images.map((image, index) => {
+        return (
+            <div className="image w-64 h-64">
+                <img
+                    src={`../storage/${image?.image}`}
+                    alt=""
+                    className="w-full h-full object-cover"
+                />
+            </div>
+        );
+    });
+
     return (
         <Layout>
-            <h1>Hello World</h1>
+            <div className="container w-full h-screen pt-32">
+                <div className="flex justify-center">{displayImage}</div>
+            </div>
         </Layout>
     );
 };

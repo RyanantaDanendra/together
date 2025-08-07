@@ -17,7 +17,7 @@ const Location = () => {
                 className="text-center text-5xl"
                 style={{ fontFamily: "Inter-Bold" }}
             >
-                See You at the Spot
+                See You at the Spot!
             </motion.h1>
             <div className="flex mt-28 px-32">
                 <div className="w-1/2 flex justify-end">

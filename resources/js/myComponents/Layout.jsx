@@ -119,9 +119,15 @@ const Layout = ({ children, bought, paid, orderAttendence }) => {
     return (
         <div className="Layout-container w-full h-screen">
             <div className="nav-wrapper w-full h-28 fixed top-0 flex justify-between items-center text-white px-6">
-                <div className="title w-14">
-                    <img src={Logo} alt="" className="w-full object-cover" />
-                </div>
+                <a href="/">
+                    <div className="title w-14">
+                        <img
+                            src={Logo}
+                            alt=""
+                            className="w-full object-cover"
+                        />
+                    </div>
+                </a>
                 {screenSize ? (
                     <div className="Linkd flex items-center gap-4">
                         <Link

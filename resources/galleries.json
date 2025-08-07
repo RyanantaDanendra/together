@@ -2,7 +2,87 @@
     "images": [
         {
             "id": 1,
-            "location": "/assets/about_image.jpg"
+            "location": "/Gallery/foto1.JPG"
+        },
+        {
+            "id": 2,
+            "location": "/Gallery/foto2.JPG"
+        },
+        {
+            "id": 3,
+            "location": "/Gallery/foto3.JPG"
+        },
+        {
+            "id": 4,
+            "location": "/Gallery/foto4.JPG"
+        },
+        {
+            "id": 5,
+            "location": "/Gallery/foto5.JPG"
+        },
+        {
+            "id": 6,
+            "location": "/Gallery/foto6.JPG"
+        },
+        {
+            "id": 7,
+            "location": "/Gallery/foto7.JPG"
+        },
+        {
+            "id": 8,
+            "location": "/Gallery/foto8.JPG"
+        },
+        {
+            "id": 9,
+            "location": "/Gallery/foto9.JPG"
+        },
+        {
+            "id": 10,
+            "location": "/Gallery/foto10.JPG"
+        },
+        {
+            "id": 11,
+            "location": "/Gallery/foto11.JPG"
+        },
+        {
+            "id": 12,
+            "location": "/Gallery/foto12.JPG"
+        },
+        {
+            "id": 13,
+            "location": "/Gallery/foto13.JPG"
+        },
+        {
+            "id": 14,
+            "location": "/Gallery/foto14.JPG"
+        },
+        {
+            "id": 15,
+            "location": "/Gallery/foto15.JPG"
+        },
+        {
+            "id": 16,
+            "location": "/Gallery/foto16.JPG"
+        },
+        {
+            "id": 17,
+            "location": "/Gallery/foto17.JPG"
+        },
+        {
+            "id": 18,
+            "location": "/Gallery/foto18.JPG"
+        },
+        {
+            "id": 19,
+            "location": "/Gallery/foto19.JPG"
+        },
+        {
+            "id": 20,
+            "location": "/Gallery/foto20.JPG"
+        },
+        {
+            "id": 21,
+            "location": "/Gallery/foto21.JPG"
         }
     ]
 }

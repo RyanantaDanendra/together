@@ -2,10 +2,23 @@ import { useState, useEffect } from "react";
 import "../../css/app.css";
 import Left1 from "../../assets/about_image.jpg";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import galleries from "../../galleries.json";
 import { Carousel } from "react-responsive-carousel";
 import { motion } from "framer-motion";
 
 const Gallery = () => {
+    const displayImage = galleries.images.map((image, index) => {
+        return (
+            <div className="lg:w-96 lg:h-[30rem]">
+                <img
+                    src={image.location}
+                    alt=""
+                    className="w-full h-full object-cover"
+                />
+            </div>
+        );
+    });
+
     return (
         <div
             id="Gallery"
@@ -22,16 +35,10 @@ const Gallery = () => {
                     <Carousel
                         dynamicHeight={false}
                         autoPlay={true}
-                        interval={6000}
+                        interval={5000}
                         infiniteLoop={true}
                     >
-                        <div className="lg:w-96 lg:h-[30rem]">
-                            <img
-                                src={Left1}
-                                alt=""
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
+                        {displayImage}
                     </Carousel>
                 </motion.div>
             </div>
