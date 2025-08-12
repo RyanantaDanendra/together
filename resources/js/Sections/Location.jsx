@@ -19,8 +19,8 @@ const Location = () => {
             >
                 See You at the Spot!
             </motion.h1>
-            <div className="flex mt-28 px-32">
-                <div className="w-1/2 flex justify-end">
+            <div className="lg:flex mt-28 lg:px-32">
+                <div className="lg:w-1/2 flex lg:justify-end justify-center">
                     <motion.div
                         initial={{ opacity: 0, y: -100 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -39,14 +39,14 @@ const Location = () => {
                         </MapContainer>
                     </motion.div>
                 </div>
-                <div className="text w-1/2 ps-28">
+                <div className="text lg:w-1/2 ps-3 lg:ps-28 md:ps-48 mt-12">
                     <h3 className="text-xl">
                         Adress: <br />
                     </h3>
                     <h1 className="text-2xl font-bold mt-2">
                         Big Garden Corner
                     </h1>
-                    <h2 className="pb-12 ">
+                    <h2 className="pb-12 pe-32 lg:ps-0">
                         Sanur, Jl. Bypass Ngurah Rai, Kesiman, Denpasar Selatan,
                         Kota Denpasar, Bali 80237
                     </h2>

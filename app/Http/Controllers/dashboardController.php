@@ -7,6 +7,7 @@ use Inertia\Inertia;
 use App\Models\User;
 use App\Models\Order;
 use App\Models\Reciept;
+use App\Models\batch19Image;
 
 class dashboardController extends Controller
 {
@@ -14,11 +15,13 @@ class dashboardController extends Controller
         $users = User::count();
         $orders = Order::count();
         $payments = Reciept::count();
+        $images = batch19Image::count();
 
         return Inertia::render('Dashboard', [
             'users' => $users,
             'orders' => $orders,
-            'payments' => $payments
+            'payments' => $payments,
+            'images' => $images
         ]);
     }
 

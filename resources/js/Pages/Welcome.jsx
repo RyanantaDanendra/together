@@ -85,7 +85,7 @@ export default function Welcome({
                                 </svg>
                             </motion.button>
                         </Link>
-                    ) : paid == false && !bought ? (
+                    ) : !paid && bought && orderAttendence == "yes" ? (
                         <Link href="/payment">
                             <motion.button
                                 initial={{ opacity: 0 }}

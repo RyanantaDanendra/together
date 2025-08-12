@@ -7,7 +7,7 @@ const About = () => {
     return (
         <motion.div
             id="About"
-            className="About-container w-full min-h-screen md:min-h-0  lg:min-h-screen gap-10 text-white  pt-10 flex flex-col items-center md:gap-14 ps-0 md:flex-col md:items-center md:pt-3 lg:mt-72 sm:flex-col sm:items-center lg:flex-row lg:ps-32"
+            className="About-container w-full min-h-screen md:min-h-0  lg:min-h-screen gap-10 text-white  pt-10 flex flex-col items-center md:gap-14 ps-0 md:flex-col md:items-center md:pt-3 lg:mt-72 sm:flex-col sm:items-center lg:flex-row lg:ps-32 pb-32 lg:pb-0"
             // style={{ backgroundColor: background }}
         >
             <div className="about-text flex flex-col lg:h-[30rem] lg:justify-start w-2/4 pt-28 lg:pt-0">
@@ -26,7 +26,7 @@ const About = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.4, delay: 0.4 }}
                     viewport={{ once: true, amount: 0.5 }}
-                    className="text-xl lg:mt-12 mt-5 text-justify"
+                    className="text-xl lg:mt-12 mt-5 text-left lg:text-justify sm:text-left"
                 >
                     TOGETHER to celebrate their shared history and create
                     lasting memories. The central idea is to foster a sense of

@@ -24,7 +24,7 @@ const Gallery = () => {
             id="Gallery"
             className="Gallery-container w-full min-h-screen md:min-h-0 mt-20 md:mt-40 flex flex-col-reverse xl:flex-row md:justify-start gap-6 xl:ps-28 lg:flex-row"
         >
-            <div className="gallery-images w-full lg:w-2/4 flex lg:justify-end md:justify-center justify-center lg:mt-32 px-8 lg:px-0">
+            <div className="gallery-images w-full lg:w-2/4 flex lg:justif-center md:justify-center justify-center lg:mt-32 px-8 lg:px-0">
                 <motion.div
                     initial={{ opacity: 0, x: -100 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -65,8 +65,8 @@ const Gallery = () => {
                     </motion.p>
                 </div>
                 <a href="/batch19images">
-                    <div className="flex items-center gap-2 hover:underline">
-                        <p className="text-blue-500 hover:underline">
+                    <div className="flex items-center gap-2 hover:underline justify-center lg:justify-start mt-3">
+                        <p className="text-blue-500 hover:underline ">
                             Batch 19
                         </p>
                         <svg

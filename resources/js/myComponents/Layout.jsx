@@ -66,8 +66,26 @@ const Layout = ({ children, bought, paid, orderAttendence }) => {
         ) {
             return (
                 <>
-                    <Link href="#About">About</Link>
-                    <Link href="#Gallery">Gallery</Link>
+                    <Link
+                        href="#About"
+                        className={
+                            window.innerWidth > 1024
+                                ? "text-white"
+                                : "text-black"
+                        }
+                    >
+                        About
+                    </Link>
+                    <Link
+                        href="#Gallery"
+                        className={
+                            window.innerWidth > 1024
+                                ? "text-white"
+                                : "text-black"
+                        }
+                    >
+                        Gallery
+                    </Link>
                     {!bought && (
                         <Link href="/buy_ticket">
                             <button
@@ -81,7 +99,7 @@ const Layout = ({ children, bought, paid, orderAttendence }) => {
                                     className="w-4"
                                 >
                                     <path
-                                        fill="#ffffff"
+                                        fill="#FFFFFF"
                                         d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
                                     />
                                 </svg>
@@ -104,7 +122,7 @@ const Layout = ({ children, bought, paid, orderAttendence }) => {
                                     className="w-4"
                                 >
                                     <path
-                                        fill="#ffffff"
+                                        fill="#FFFFFF"
                                         d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
                                     />
                                 </svg>
@@ -152,7 +170,7 @@ const Layout = ({ children, bought, paid, orderAttendence }) => {
                                 className="w-4"
                             >
                                 <path
-                                    fill="#ffffff"
+                                    fill="#FFFFFF"
                                     d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"
                                 />
                             </svg>
@@ -207,7 +225,7 @@ const Layout = ({ children, bought, paid, orderAttendence }) => {
                     </div>
                 ) : (
                     // hamburger menu
-                    <div className="hamburger ">
+                    <div className="hamburger">
                         <span onClick={showMenu}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -223,9 +241,12 @@ const Layout = ({ children, bought, paid, orderAttendence }) => {
                         <div
                             id="menu"
                             className="content absolute -right-full w-48 h-72"
-                            style={{ backgroundColor: "#7F00FF90" }}
+                            style={{
+                                backgroundColor: "white",
+                                borderRadius: "50px 0 0 50px",
+                            }}
                         >
-                            <div className="flex flex-col">
+                            <div className="flex flex-col ms-5 mt-16">
                                 <Link
                                     href={
                                         url == "/order" ||
@@ -234,7 +255,7 @@ const Layout = ({ children, bought, paid, orderAttendence }) => {
                                             ? "/"
                                             : "/#Home"
                                     }
-                                    className="text-2xl"
+                                    className="lg:text-2xl text-l text-black"
                                 >
                                     Home
                                 </Link>
@@ -246,10 +267,10 @@ const Layout = ({ children, bought, paid, orderAttendence }) => {
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 448 512"
-                                        className="w-4"
+                                        className="w-4 mt-3 lg:mt-0"
                                     >
                                         <path
-                                            fill="#ffffff"
+                                            fill="#000000"
                                             d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"
                                         />
                                     </svg>
@@ -269,7 +290,7 @@ const Layout = ({ children, bought, paid, orderAttendence }) => {
                                                 duration: 0.3,
                                                 ease: "easeInOut",
                                             }}
-                                            className="dropdown-wrapper ps-1 w-28 absolute right-1 top-16 bg-white text-black"
+                                            className="dropdown-wrapper ps-1 w-28 absolute right-16 top-52 bg-white text-black"
                                         >
                                             <div
                                                 onClick={handleLogout}

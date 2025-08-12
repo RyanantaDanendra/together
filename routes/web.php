@@ -22,7 +22,7 @@ Route::get('/', function () {
     $bought = Order::where('id_user',$userId)->exists();
     $paid = Reciept::where('id_user', $userId)->exists();    
 
-    $orderAttendence = Order::where('id_user', $userId)->pluck("attendence");
+    $orderAttendence = Order::where('id_user', $userId)->value("attendence");
 
     return Inertia::render('Welcome', [
         'success' => session('success'),

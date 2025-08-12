@@ -5,7 +5,7 @@ import AdminLayout from "../../myComponents/AdminLayout";
 import Modal from "../../Components/Modal";
 import Swal from "sweetalert2";
 
-const Orders = ({ orders, success, updateSuccess }) => {
+const Orders = ({ orders, success, updateSuccess, auth }) => {
     if (success) {
         Swal.fire({
             title: "Success",
@@ -97,9 +97,13 @@ const Orders = ({ orders, success, updateSuccess }) => {
         return orders.map((order, index) => {
             return (
                 <tr key={index} style={{ borderBottom: "1px solid #FFFFFF80" }}>
-                    <td className="pe-10 py-4 text-xl">{order.id}</td>
-                    <td className="pe-14 text-xl">{order.user.name}</td>
-                    <td className="pe-10 text-xl flex justify-center items-center gap-3">
+                    <td className="lg:pe-10 lg:py-4 lg:text-xl text-xs pe-3">
+                        {order.id}
+                    </td>
+                    <td className="lg:pe-14 lg:text-xl text-xs pe-3">
+                        {order.user.name}
+                    </td>
+                    <td className="lg:pe-10 lg:text-xl flex justify-center items-center gap-3">
                         <p className="mt-3">{order.attendence}</p>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -116,141 +120,115 @@ const Orders = ({ orders, success, updateSuccess }) => {
                             />
                         </svg>
                     </td>
-                    <td className="pe-10 text-xl">
-                        <p className="inline-block ms-3">{order.allergy}</p>
-                        {plusButton(order)}
-                    </td>
                 </tr>
             );
         });
     };
 
-    return (
-        <AdminLayout>
-            <div className="orders-container w-full h-full flex justify-center mt-40  text-white">
-                <div className="ms-72">
-                    <table>
-                        <thead>
-                            <tr style={{ borderBottom: "1px solid #FFFFFF" }}>
-                                <th className="pe-10 text-2xl font-bold">Id</th>
-                                <th className="pe-10 text-2xl font-bold">
-                                    Name
-                                </th>
-                                <th className="pe-14 text-2xl font-bold">
-                                    Attendence
-                                </th>
-                                <th className="pe-10 text-2xl font-bold">
-                                    Allergy
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {displayOrder()}
-                            {/* attenedence modal */}
-                            <Modal
-                                show={
-                                    !!selectedOrder &&
-                                    activeModal == "updateModal"
-                                }
-                                onClose={handleClose}
-                            >
-                                <h1 className="text-center">
-                                    Update Attendence
-                                </h1>
-                                <form
-                                    onSubmit={(e) =>
-                                        handleUpdate(e, selectedOrder?.id)
-                                    }
+    if (auth.user.as == "admin") {
+        return (
+            <AdminLayout>
+                <div className="orders-container w-full h-full flex justify-center mt-40  text-white">
+                    <div className="lg:ms-72">
+                        <table>
+                            <thead>
+                                <tr
+                                    style={{
+                                        borderBottom: "1px solid #FFFFFF",
+                                    }}
                                 >
-                                    <div className="form-content flex flex-col items-center justify-center">
-                                        <div>
-                                            <label htmlFor="attendence">
-                                                Yes
-                                            </label>
-                                            <input
-                                                type="radio"
-                                                name="attendence"
-                                                id="attendence"
-                                                value="yes"
-                                                checked={
-                                                    attendenceRadio == "yes"
-                                                }
-                                                onChange={(e) => [
-                                                    setData(
-                                                        "attendence",
-                                                        e.target.value
-                                                    ),
-                                                    setAttendenceRadio(
-                                                        e.target.value
-                                                    ),
-                                                ]}
-                                            />
-                                            <label htmlFor="attendence">
-                                                No
-                                            </label>
-                                            <input
-                                                type="radio"
-                                                name="attendence"
-                                                id="attendence"
-                                                value="no"
-                                                checked={
-                                                    attendenceRadio == "no"
-                                                }
-                                                onChange={(e) => [
-                                                    setData(
-                                                        "attendence",
-                                                        e.target.value
-                                                    ),
-                                                    setAttendenceRadio(
-                                                        e.target.value
-                                                    ),
-                                                ]}
-                                            />
-                                        </div>
-                                        <button type="submit">Update</button>
-                                    </div>
-                                </form>
-                            </Modal>
-
-                            {/* allergy add modal */}
-                            <Modal
-                                show={
-                                    !!selectedOrder && activeModal == "addModal"
-                                }
-                                onClose={handleClose}
-                            >
-                                <h1 className="text-center">Add Allergy</h1>
-                                <div className="form-content flex justify-center mt-4 pb-3">
+                                    <th className="pe-10 text-2xl font-bold">
+                                        Id
+                                    </th>
+                                    <th className="pe-10 text-2xl font-bold">
+                                        Name
+                                    </th>
+                                    <th className="lg:pe-14 text-2xl font-bold text-center">
+                                        Attendence
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {displayOrder()}
+                                {/* attenedence modal */}
+                                <Modal
+                                    show={
+                                        !!selectedOrder &&
+                                        activeModal == "updateModal"
+                                    }
+                                    onClose={handleClose}
+                                >
+                                    <h1 className="text-center">
+                                        Update Attendence
+                                    </h1>
                                     <form
                                         onSubmit={(e) =>
-                                            handleAdd(e, selectedOrder?.id)
+                                            handleUpdate(e, selectedOrder?.id)
                                         }
                                     >
-                                        <input
-                                            type="text"
-                                            placeholder="Enter The Allergy. . ."
-                                            name="allergy"
-                                            id="allergy"
-                                            value={allergyData?.allergy}
-                                            onChange={(e) =>
-                                                setAllergyData(
-                                                    "allergy",
-                                                    e.target.value
-                                                )
-                                            }
-                                            className="block border-b-2 border-b-black"
-                                        />
-                                        <button type="Submit" className="mt-2">
-                                            Submit
-                                        </button>
+                                        <div className="form-content flex flex-col items-center justify-center">
+                                            <div>
+                                                <label htmlFor="attendence">
+                                                    Yes
+                                                </label>
+                                                <input
+                                                    type="radio"
+                                                    name="attendence"
+                                                    id="attendence"
+                                                    value="yes"
+                                                    checked={
+                                                        attendenceRadio == "yes"
+                                                    }
+                                                    onChange={(e) => [
+                                                        setData(
+                                                            "attendence",
+                                                            e.target.value
+                                                        ),
+                                                        setAttendenceRadio(
+                                                            e.target.value
+                                                        ),
+                                                    ]}
+                                                />
+                                                <label htmlFor="attendence">
+                                                    No
+                                                </label>
+                                                <input
+                                                    type="radio"
+                                                    name="attendence"
+                                                    id="attendence"
+                                                    value="no"
+                                                    checked={
+                                                        attendenceRadio == "no"
+                                                    }
+                                                    onChange={(e) => [
+                                                        setData(
+                                                            "attendence",
+                                                            e.target.value
+                                                        ),
+                                                        setAttendenceRadio(
+                                                            e.target.value
+                                                        ),
+                                                    ]}
+                                                />
+                                            </div>
+                                            <button type="submit">
+                                                Update
+                                            </button>
+                                        </div>
                                     </form>
-                                </div>
-                            </Modal>
-                        </tbody>
-                    </table>
+                                </Modal>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
-        </AdminLayout>
-    );
+            </AdminLayout>
+        );
+    } else {
+        return (
+            <h1 className="text-center text-white text-xl mt-32">
+                Access Denied!
+            </h1>
+        );
+    }
 };
 export default Orders;

@@ -5,13 +5,15 @@ import Layout from "../myComponents/Layout";
 import Swal from "sweetalert2";
 
 const Payment = ({ success, paid, orderAttendence }) => {
-    if (success) {
-        Swal.fire({
-            title: "Success",
-            text: "Ticket Booked Successfully!",
-            icon: "success",
-        });
-    }
+    useEffect(() => {
+        if (success) {
+            Swal.fire({
+                title: "Success",
+                text: "Ticket Booked Successfully!",
+                icon: "success",
+            });
+        }
+    }, [success]);
 
     const [preview, setPreview] = useState(null);
 
@@ -40,13 +42,12 @@ const Payment = ({ success, paid, orderAttendence }) => {
         return (
             <Layout paid={paid} orderAttendence={orderAttendence}>
                 {!paid ? (
-                    <div className="Payment-container flex flex-col items-center gap-10 justify-center mt-32 text-white">
-                        <div
-                            className="qris-container w-64 h-64"
-                            style={{ backgroundColor: "#7F00FF90" }}
-                        >
-                            <img src="" alt="" />
-                        </div>
+                    <div className="Payment-container flex flex-col items-center gap-10 justify-center mt-32 text-white pb-32">
+                        <h3>
+                            901347964614 (SeaBank) <br />
+                            Name: Ni Putu Bella Mahayanti <br />
+                            Price: Rp 175.000
+                        </h3>
                         <p>
                             *After Making a payment please upload the reciept
                             here

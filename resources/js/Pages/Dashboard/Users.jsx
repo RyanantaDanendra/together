@@ -1,7 +1,7 @@
 import { tr } from "framer-motion/client";
 import AdminLayout from "../../myComponents/AdminLayout";
 
-const Users = ({ users }) => {
+const Users = ({ users, auth }) => {
     const displayUser = () => {
         return users.map((user, index) => {
             return (
@@ -9,39 +9,55 @@ const Users = ({ users }) => {
                     key={index}
                     style={{ borderBottom: ".5px solid #FFFFFF60" }}
                 >
-                    <td className="pe-10 p-4 text-xl">{user.id}</td>
-                    <td className="pe-10 text-xl">{user.name}</td>
-                    <td className="pe-10 text-xl">{user.phone}</td>
-                    <td className="text-xl">{user.email}</td>
+                    <td className="lg:pe-10 lg:p-4 lg:text-xl text-xs pe-3">
+                        {user.id}
+                    </td>
+                    <td className="lg:pe-10 lg:text-xl text-xs pe-3">
+                        {user.name}
+                    </td>
+                    <td className="lg:pe-10 lg:text-xl text-xs pe-3">
+                        {user.phone}
+                    </td>
+                    <td className="lg:text-xl text-xs pe-3">{user.email}</td>
                 </tr>
             );
         });
     };
 
-    return (
-        <AdminLayout>
-            <div className="usersDashboard-container w-full flex justify-center text-white mt-40">
-                <div className="ms-72">
-                    <table>
-                        <thead>
-                            <tr className="border-b-2 border-b-white">
-                                <th className="pe-10 text-2xl font-bold">
-                                    Id{" "}
-                                </th>
-                                <th className="pe-10 text-2xl font-bold">
-                                    Name{" "}
-                                </th>
-                                <th className="pe-10 text-2xl font-bold">
-                                    Phone{" "}
-                                </th>
-                                <th className=" text-2xl font-bold">Email </th>
-                            </tr>
-                        </thead>
-                        <tbody>{displayUser()}</tbody>
-                    </table>
+    if (auth.user.as == "admin") {
+        return (
+            <AdminLayout>
+                <div className="usersDashboard-container w-full flex justify-center text-white mt-40">
+                    <div className="lg:ms-72">
+                        <table className="lg:px-0 px-82">
+                            <thead>
+                                <tr className="border-b-2 border-b-white">
+                                    <th className="lg:pe-10 lg:text-2xl font-bold">
+                                        Id{" "}
+                                    </th>
+                                    <th className="lg:pe-10 lg:text-2xl font-bold">
+                                        Name{" "}
+                                    </th>
+                                    <th className="lg:pe-10 lg:text-2xl font-bold">
+                                        Phone{" "}
+                                    </th>
+                                    <th className=" lg:text-2xl font-bold">
+                                        Email{" "}
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>{displayUser()}</tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
-        </AdminLayout>
-    );
+            </AdminLayout>
+        );
+    } else {
+        return (
+            <h1 className="text-center text-white text-xl mt-32">
+                Access Denied!
+            </h1>
+        );
+    }
 };
 export default Users;

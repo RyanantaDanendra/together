@@ -9,7 +9,7 @@ export default function Countdown() {
     ).getTime();
 
     return (
-        <div className="flex flex-col items-center lg:mt-40">
+        <div className="flex flex-col items-center justify-center lg:mt-40 mt-72">
             <h1>Mark Your Calendar!</h1>
             <CountdownTimer targetDate={dateTimeAfterThreeDays} />
         </div>

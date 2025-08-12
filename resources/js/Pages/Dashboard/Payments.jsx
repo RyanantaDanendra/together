@@ -1,7 +1,7 @@
 import { tr } from "framer-motion/client";
 import AdminLayout from "../../myComponents/AdminLayout";
 
-const Payments = ({ payments }) => {
+const Payments = ({ payments, auth }) => {
     const displayPayment = payments.map((payment, index) => {
         return (
             <tr className="h-56">
@@ -20,27 +20,37 @@ const Payments = ({ payments }) => {
         );
     });
 
-    return (
-        <AdminLayout>
-            <div className="Payments-container w-full flex justify-center mt-40 text-white">
-                <div className="ms-72">
-                    <table>
-                        <thead>
-                            <tr className="border-b-2 border-b-white">
-                                <th className="pe-10 text-2xl font-bold">Id</th>
-                                <th className="pe-10 text-2xl font-bold">
-                                    Name
-                                </th>
-                                <th className="text-2xl px-10 font-bold">
-                                    Reciept
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>{displayPayment}</tbody>
-                    </table>
+    if (auth.user.as == "admin") {
+        return (
+            <AdminLayout>
+                <div className="Payments-container w-full flex justify-center mt-40 text-white">
+                    <div className="lg:ms-72">
+                        <table>
+                            <thead>
+                                <tr className="border-b-2 border-b-white">
+                                    <th className="pe-10 text-2xl font-bold">
+                                        Id
+                                    </th>
+                                    <th className="pe-10 text-2xl font-bold">
+                                        Name
+                                    </th>
+                                    <th className="text-2xl px-10 font-bold">
+                                        Reciept
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>{displayPayment}</tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
-        </AdminLayout>
-    );
+            </AdminLayout>
+        );
+    } else {
+        return (
+            <h1 className="text-center text-white text-xl mt-32">
+                Access Denied!
+            </h1>
+        );
+    }
 };
 export default Payments;
