@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { createInertiaApp } from "@inertiajs/react";
 import "../css/app.css";
 import { BrowserRouter } from "react-router-dom";
+import "./Pages/Auth/Login.jsx";
 
 const pages = import.meta.glob("./Pages/**/*.jsx", { eager: true });
 
