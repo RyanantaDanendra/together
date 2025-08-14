@@ -8,7 +8,7 @@ const pages = import.meta.glob("./Pages/**/*.jsx", { eager: true });
 
 createInertiaApp({
     resolve: (name) => {
-        const file = `./Pages/${name}.jsx`;
+        const file = `./Pages/${name}.jsx`; // build the path from the Inertia name
         if (!pages[file]) {
             throw new Error(`Page not found in Vite manifest: ${file}`);
         }
