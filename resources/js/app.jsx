@@ -6,14 +6,17 @@ import { BrowserRouter } from "react-router-dom";
 
 const pages = import.meta.glob("./Pages/**/*.jsx", { eager: true });
 
+function resolvePage(name) {
+    // Build possible key variations
+    const key1 = `./Pages/${name}.jsx`; // normal
+    const key2 = `./Pages/${name}/index.jsx`; // if nested index
+    if (pages[key1]) return pages[key1];
+    if (pages[key2]) return pages[key2];
+    throw new Error(`Page not found in Vite manifest: ${key1} or ${key2}`);
+}
+
 createInertiaApp({
-    resolve: (name) => {
-        const file = `./Pages/${name}.jsx`; // build the path from the Inertia name
-        if (!pages[file]) {
-            throw new Error(`Page not found in Vite manifest: ${file}`);
-        }
-        return pages[file];
-    },
+    resolve: resolvePage,
     setup({ el, App, props }) {
         const root = createRoot(el);
         root.render(
