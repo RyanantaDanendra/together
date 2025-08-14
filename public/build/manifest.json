@@ -1,4 +1,8 @@
 {
+  "_index.esm-DdkjwIZ3.js": {
+    "file": "assets/index.esm-DdkjwIZ3.js",
+    "name": "index.esm"
+  },
   "node_modules/leaflet/dist/images/layers-2x.png": {
     "file": "assets/layers-2x-Bpkbi35X.png",
     "src": "node_modules/leaflet/dist/images/layers-2x.png"
@@ -36,22 +40,87 @@
     "src": "resources/css/app.css",
     "isEntry": true
   },
+  "resources/js/Pages/Auth/Login.jsx": {
+    "file": "assets/Login-BkRqiXZS.js",
+    "name": "Login",
+    "src": "resources/js/Pages/Auth/Login.jsx",
+    "isEntry": true,
+    "imports": [
+      "_index.esm-DdkjwIZ3.js"
+    ],
+    "css": [
+      "assets/app-DPypcvBO.css"
+    ],
+    "assets": [
+      "assets/Inter_28pt-Regular-Dou9gfMK.ttf",
+      "assets/Inter_18pt-ExtraBold-LoA67B-f.ttf"
+    ]
+  },
+  "resources/js/Pages/Auth/Register.jsx": {
+    "file": "assets/Register-L9-iAdZ6.js",
+    "name": "Register",
+    "src": "resources/js/Pages/Auth/Register.jsx",
+    "isEntry": true,
+    "imports": [
+      "_index.esm-DdkjwIZ3.js",
+      "resources/js/Pages/Auth/Login.jsx"
+    ],
+    "css": [
+      "assets/app-DPypcvBO.css"
+    ],
+    "assets": [
+      "assets/Inter_28pt-Regular-Dou9gfMK.ttf",
+      "assets/Inter_18pt-ExtraBold-LoA67B-f.ttf"
+    ]
+  },
+  "resources/js/Pages/Dashboard.jsx": {
+    "file": "assets/Dashboard-BMJNN6_x.js",
+    "name": "Dashboard",
+    "src": "resources/js/Pages/Dashboard.jsx",
+    "isEntry": true,
+    "imports": [
+      "_index.esm-DdkjwIZ3.js"
+    ]
+  },
+  "resources/js/Pages/Welcome.jsx": {
+    "file": "assets/Welcome-D4BnaCZw.js",
+    "name": "Welcome",
+    "src": "resources/js/Pages/Welcome.jsx",
+    "isEntry": true,
+    "imports": [
+      "_index.esm-DdkjwIZ3.js"
+    ],
+    "css": [
+      "assets/Welcome-JwLFfYJH.css",
+      "assets/app-DPypcvBO.css"
+    ],
+    "assets": [
+      "assets/layers-BWBAp2CZ.png",
+      "assets/layers-2x-Bpkbi35X.png",
+      "assets/marker-icon-hN30_KVU.png",
+      "assets/Inter_28pt-Regular-Dou9gfMK.ttf",
+      "assets/Inter_18pt-ExtraBold-LoA67B-f.ttf"
+    ]
+  },
   "resources/js/app.jsx": {
-    "file": "assets/app-BxCzW9G4.js",
+    "file": "assets/app-CD6UV6pK.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
+    "imports": [
+      "_index.esm-DdkjwIZ3.js",
+      "resources/js/Pages/Auth/Login.jsx",
+      "resources/js/Pages/Welcome.jsx",
+      "resources/js/Pages/Dashboard.jsx"
+    ],
     "css": [
-      "assets/app-B9G1NQop.css"
+      "assets/app-DPypcvBO.css"
     ],
     "assets": [
       "assets/logo-Cjk9HyLs.png",
       "assets/foto11-Cid3SRv1.JPG",
       "assets/Inter_28pt-Regular-Dou9gfMK.ttf",
-      "assets/Inter_18pt-ExtraBold-LoA67B-f.ttf",
-      "assets/layers-BWBAp2CZ.png",
-      "assets/layers-2x-Bpkbi35X.png",
-      "assets/marker-icon-hN30_KVU.png"
+      "assets/Inter_18pt-ExtraBold-LoA67B-f.ttf"
     ]
   }
 }
