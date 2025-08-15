@@ -12,6 +12,7 @@ export default defineConfig({
                 "resources/js/Pages/Auth/Register.jsx",
                 "resources/js/Pages/Dashboard.jsx",
                 "resources/js/Pages/Welcome.jsx",
+                "resources/js/Pages/Profile/Edit.jsx",
             ],
             refresh: true,
         }),
