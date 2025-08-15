@@ -1,12 +1,4 @@
 {
-  "_index.esm-DdkjwIZ3.js": {
-    "file": "assets/index.esm-DdkjwIZ3.js",
-    "name": "index.esm"
-  },
-  "_sweetalert2.esm.all-B0Dix5B2.js": {
-    "file": "assets/sweetalert2.esm.all-B0Dix5B2.js",
-    "name": "sweetalert2.esm.all"
-  },
   "node_modules/leaflet/dist/images/layers-2x.png": {
     "file": "assets/layers-2x-Bpkbi35X.png",
     "src": "node_modules/leaflet/dist/images/layers-2x.png"
@@ -45,12 +37,12 @@
     "isEntry": true
   },
   "resources/js/Pages/Auth/Login.jsx": {
-    "file": "assets/Login-BkRqiXZS.js",
+    "file": "assets/Login-DTEEiCGr.js",
     "name": "Login",
     "src": "resources/js/Pages/Auth/Login.jsx",
     "isEntry": true,
     "imports": [
-      "_index.esm-DdkjwIZ3.js"
+      "resources/js/Pages/Dashboard/Images.jsx"
     ],
     "css": [
       "assets/app-DPypcvBO.css"
@@ -61,12 +53,12 @@
     ]
   },
   "resources/js/Pages/Auth/Register.jsx": {
-    "file": "assets/Register-L9-iAdZ6.js",
+    "file": "assets/Register-CFG2QbwT.js",
     "name": "Register",
     "src": "resources/js/Pages/Auth/Register.jsx",
     "isEntry": true,
     "imports": [
-      "_index.esm-DdkjwIZ3.js",
+      "resources/js/Pages/Dashboard/Images.jsx",
       "resources/js/Pages/Auth/Login.jsx"
     ],
     "css": [
@@ -78,24 +70,57 @@
     ]
   },
   "resources/js/Pages/Dashboard.jsx": {
-    "file": "assets/Dashboard-BMJNN6_x.js",
+    "file": "assets/Dashboard-4Bcx0Edj.js",
     "name": "Dashboard",
     "src": "resources/js/Pages/Dashboard.jsx",
     "isEntry": true,
     "imports": [
-      "_index.esm-DdkjwIZ3.js"
+      "resources/js/Pages/Dashboard/Images.jsx"
+    ]
+  },
+  "resources/js/Pages/Dashboard/Images.jsx": {
+    "file": "assets/Images-DdkjwIZ3.js",
+    "name": "Images",
+    "src": "resources/js/Pages/Dashboard/Images.jsx",
+    "isEntry": true
+  },
+  "resources/js/Pages/Dashboard/Orders.jsx": {
+    "file": "assets/Orders-pyDDrGlX.js",
+    "name": "Orders",
+    "src": "resources/js/Pages/Dashboard/Orders.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/Pages/Dashboard/Images.jsx"
+    ]
+  },
+  "resources/js/Pages/Dashboard/Payments.jsx": {
+    "file": "assets/Payments-BCmsYL8s.js",
+    "name": "Payments",
+    "src": "resources/js/Pages/Dashboard/Payments.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/Pages/Dashboard/Images.jsx"
+    ]
+  },
+  "resources/js/Pages/Dashboard/Users.jsx": {
+    "file": "assets/Users-BCmsYL8s.js",
+    "name": "Users",
+    "src": "resources/js/Pages/Dashboard/Users.jsx",
+    "isEntry": true,
+    "imports": [
+      "resources/js/Pages/Dashboard/Images.jsx"
     ]
   },
   "resources/js/Pages/Profile/Edit.jsx": {
-    "file": "assets/Edit-BjuhZLKl.js",
+    "file": "assets/Edit-C2u76YR1.js",
     "name": "Edit",
     "src": "resources/js/Pages/Profile/Edit.jsx",
     "isEntry": true,
     "imports": [
-      "_index.esm-DdkjwIZ3.js",
+      "resources/js/Pages/Dashboard/Images.jsx",
       "resources/js/Pages/Dashboard.jsx",
       "resources/js/Pages/Auth/Login.jsx",
-      "_sweetalert2.esm.all-B0Dix5B2.js"
+      "resources/js/Pages/Dashboard/Orders.jsx"
     ],
     "css": [
       "assets/app-DPypcvBO.css"
@@ -106,13 +131,13 @@
     ]
   },
   "resources/js/Pages/Welcome.jsx": {
-    "file": "assets/Welcome-KcAJWvp0.js",
+    "file": "assets/Welcome-DnI04tji.js",
     "name": "Welcome",
     "src": "resources/js/Pages/Welcome.jsx",
     "isEntry": true,
     "imports": [
-      "_index.esm-DdkjwIZ3.js",
-      "_sweetalert2.esm.all-B0Dix5B2.js"
+      "resources/js/Pages/Dashboard/Images.jsx",
+      "resources/js/Pages/Dashboard/Orders.jsx"
     ],
     "css": [
       "assets/Welcome-JwLFfYJH.css",
@@ -127,14 +152,14 @@
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-CDkd7hYF.js",
+    "file": "assets/app-COEgP4py.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
     "imports": [
-      "_index.esm-DdkjwIZ3.js",
+      "resources/js/Pages/Dashboard/Images.jsx",
       "resources/js/Pages/Auth/Login.jsx",
-      "_sweetalert2.esm.all-B0Dix5B2.js",
+      "resources/js/Pages/Dashboard/Orders.jsx",
       "resources/js/Pages/Dashboard.jsx",
       "resources/js/Pages/Welcome.jsx"
     ],
