@@ -10,7 +10,7 @@ const Payments = ({ payments, auth }) => {
                 <td className="flex justify-center items-center">
                     <div className="image-wrapper w-32 h-32 mt-10">
                         <img
-                            src={`/storage/${payment?.image}`}
+                            src={`/storage/image/${payment?.image}`}
                             alt={payment.image}
                             className="w-full object-cover"
                         />
