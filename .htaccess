@@ -5,7 +5,7 @@
 
     RewriteEngine On
 
-    RewriteCond %{REQUEST_URI} ^/(build|Gallery|storage)/
+    RewriteCond %{REQUEST_URI} ^/(build|Gallery)/
     RewriteRule ^(.*)$ public/$1 [L]
 
     # Handle Authorization Header
