@@ -30,19 +30,10 @@ class batch19ImagesController extends Controller
         ]);
 
         if($request->hasFile('image')) {
-                        // Dapatkan file dari permintaan
             $file = $request->file('image');
-
-            // Tentukan direktori tujuan di dalam folder public
             $destinationPath = public_path('/images/');
-
-            // Beri nama file yang unik untuk menghindari tumpang tindih
             $fileName = time() . '.' . $file->getClientOriginalExtension();
-
-            // Pindahkan file ke direktori public
             $file->move($destinationPath, $fileName);
-
-            // Simpan path relatif untuk digunakan di database
             $path = 'images/' . $fileName;
         } else {
             return redirect()->back()->with(["error" => "Image file is required"]);
