@@ -17,6 +17,7 @@ export default defineConfig({
                 "resources/js/Pages/Dashboard/Orders.jsx",
                 "resources/js/Pages/Dashboard/Payments.jsx",
                 "resources/js/Pages/Dashboard/Users.jsx",
+                "resources/js/Pages/Images.jsx",
             ],
             refresh: true,
         }),
