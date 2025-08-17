@@ -30,11 +30,7 @@ class batch19ImagesController extends Controller
         ]);
 
         if($request->hasFile('image')) {
-            $file = $request->file('image');
-            $destinationPath = public_path('/images/');
-            $fileName = time() . '.' . $file->getClientOriginalExtension();
-            $file->move($destinationPath, $fileName);
-            $path = 'images/' . $fileName;
+            $path = $request->file('image')->store('image', 'public');
         } else {
             return redirect()->back()->with(["error" => "Image file is required"]);
         }
