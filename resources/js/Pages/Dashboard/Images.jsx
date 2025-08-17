@@ -20,7 +20,7 @@ const Images = ({ images, auth }) => {
                 <td className="flex justify-center items-center">
                     <div className="image-wrapper w-32 h-32 mt-10">
                         <img
-                            src={`../storage/${image?.image}`}
+                            src={`/images/${image?.image}`}
                             alt={image.image}
                             className="w-full object-cover"
                         />
