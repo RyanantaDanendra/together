@@ -6,11 +6,11 @@
     Options +FollowSymLinks
     RewriteEngine On
 
-    RewriteCond %{REQUEST_URI} ^/storage/
-    RewriteRule ^ - [L]
+    # RewriteCond %{REQUEST_URI} ^/storage/
+    # RewriteRule ^ - [L]
 
-    RewriteCond %{REQUEST_URI} ^/(build|Gallery)/
-    RewriteRule ^(.*)$ public/$1 [L]
+    # RewriteCond %{REQUEST_URI} ^/(build|Gallery)/
+    # RewriteRule ^(.*)$ public/$1 [L]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
